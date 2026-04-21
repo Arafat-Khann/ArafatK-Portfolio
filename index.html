@@ -1,0 +1,303 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0c0809;
+  --surface:#120d0e;
+  --surface2:#1a1213;
+  --maroon:#6b1e28;
+  --maroon-dim:#3d1118;
+  --maroon-light:#8c2535;
+  --cream:#e8e0d5;
+  --muted:#7a6e6a;
+  --border:rgba(107,30,40,0.25);
+  --border2:rgba(107,30,40,0.45);
+  --text:#ded6cb;
+  --fh:'Cormorant Garamond',serif;
+  --fb:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:16px;line-height:1.7;}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:28px 56px;border-bottom:0.5px solid var(--border);}
+.logo{font-family:var(--fh);font-size:28px;font-weight:600;color:var(--cream);letter-spacing:0.5px;}
+.logo-dot{color:var(--maroon-light);}
+nav ul{display:flex;gap:32px;list-style:none;}
+nav ul a{color:var(--muted);text-decoration:none;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s;}
+nav ul a:hover{color:var(--cream);}
+.nav-cta{color:var(--maroon-light) !important;border:0.5px solid var(--maroon);padding:10px 22px;}
+
+.hero{padding:72px 56px 92px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:48px;align-items:start;}
+.hero-main{max-width:760px;}
+.hero-eyebrow{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--maroon-light);margin-bottom:28px;display:flex;align-items:center;gap:12px;}
+.eyebrow-line{width:28px;height:0.5px;background:var(--maroon-light);}
+h1{font-family:var(--fh);font-size:72px;font-weight:400;line-height:1.08;letter-spacing:-1px;color:var(--cream);margin-bottom:28px;}
+h1 em{font-style:italic;color:var(--maroon-light);}
+.hero-sub{font-size:17px;color:var(--muted);max-width:520px;line-height:1.85;font-weight:300;margin-bottom:44px;}
+.hero-actions{display:flex;gap:16px;align-items:center;}
+.btn-main{display:inline-block;background:var(--maroon);color:var(--cream);border:none;padding:15px 30px;font-family:var(--fb);font-size:15px;font-weight:500;letter-spacing:0.5px;cursor:pointer;transition:background 0.2s;text-decoration:none;}
+.btn-main:hover{background:var(--maroon-light);}
+.btn-ghost{display:inline-block;background:transparent;color:var(--muted);border:none;font-family:var(--fb);font-size:15px;cursor:pointer;letter-spacing:0.5px;text-decoration:underline;text-underline-offset:4px;transition:color 0.2s;}
+.btn-ghost:hover{color:var(--cream);}
+
+.hero-side{display:flex;flex-direction:column;gap:14px;}
+.mockup-title{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--maroon-light);}
+.site-mockup{position:relative;background:var(--surface);border:1px solid var(--border2);overflow:hidden;box-shadow:0 28px 60px rgba(0,0,0,0.4);}
+.mockup-top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--border);}
+.mockup-dots{display:flex;gap:6px;}
+.mockup-dots span{width:8px;height:8px;border-radius:50%;background:rgba(232,224,213,0.2);}
+.mockup-url{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
+.mockup-frame{width:100%;height:300px;border:none;background:var(--bg);display:block;}
+.mockup-overlay{position:absolute;inset:0;z-index:2;}
+
+.refined-card{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.refined-row{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;padding:8px 10px;border:1px solid rgba(107,30,40,0.22);border-radius:10px;background:rgba(107,30,40,0.06);}
+.refined-key{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.refined-val{font-family:var(--fh);font-size:15px;color:var(--cream);text-align:right;}
+
+.divider{height:0.5px;background:var(--border);margin:0 56px;}
+
+section{padding:92px 56px;}
+section[id]{scroll-margin-top:90px;}
+
+.section-eyebrow{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--maroon-light);margin-bottom:46px;display:flex;align-items:center;gap:12px;}
+.section-hint{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:-24px 0 28px;}
+h2{font-family:var(--fh);font-size:42px;font-weight:400;color:var(--cream);margin-bottom:8px;letter-spacing:-0.5px;}
+
+.portfolio-cats{display:flex;flex-direction:column;gap:0;}
+.cat-label{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--maroon-light);padding:24px 0 16px;border-top:0.5px solid var(--border);}
+.projects-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);margin-bottom:1px;}
+.project-card{background:var(--bg);padding:28px 24px;transition:background 0.2s;cursor:default;}
+.project-card:hover{background:var(--surface2);}
+.project-card-link{display:block;text-decoration:none;cursor:pointer;}
+.project-name{font-family:var(--fh);font-size:24px;font-weight:600;color:var(--cream);margin-bottom:6px;}
+.project-location{font-size:13px;color:var(--muted);letter-spacing:0.5px;margin-bottom:12px;}
+.project-desc{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300;}
+.project-status{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;}
+.status-live{color:var(--maroon-light);}
+.status-soon{color:var(--muted);}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.about-text p{font-size:17px;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:18px;}
+.about-text p:last-child{margin-bottom:0;}
+.about-facts{display:flex;flex-direction:column;gap:0;}
+.fact-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:0.5px solid var(--border);}
+.fact-label{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.fact-val{font-family:var(--fh);font-size:22px;font-weight:600;color:var(--cream);}
+
+.contact-inner{max-width:520px;}
+.contact-inner p{font-size:17px;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:38px;}
+.contact-links{display:flex;flex-direction:column;gap:0;}
+.contact-row{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:0.5px solid var(--border);}
+.contact-row:last-child{border-bottom:0.5px solid var(--border);}
+.contact-type{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.contact-val{font-family:var(--fh);font-size:21px;color:var(--cream);}
+.contact-val{text-decoration:none;transition:color 0.2s;}
+.contact-val:hover{color:var(--maroon-light);}
+
+footer{padding:28px 56px;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:13px;color:var(--muted);letter-spacing:0.5px;}
+.footer-avail{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--maroon-light);}
+.footer-home{color:var(--cream);text-decoration:none;}
+.footer-home:hover{color:var(--maroon-light);}
+
+@media (max-width:900px){
+  nav{padding:22px 24px;}
+  nav ul{gap:18px;}
+  .hero{padding:56px 24px 64px;grid-template-columns:1fr;gap:30px;}
+  .hero-main{max-width:100%;}
+  h1{font-size:56px;}
+  .hero-sub{max-width:100%;}
+  .hero-side{max-width:100%;}
+  .mockup-frame{height:300px;}
+  .refined-card{max-width:100%;}
+  .divider{margin:0 24px;}
+  section{padding:72px 24px;}
+  .about-grid{grid-template-columns:1fr;gap:48px;}
+  footer{padding:24px;}
+}
+
+@media (max-width:640px){
+  body{font-size:15px;}
+  .logo{font-size:24px;}
+  nav ul a{font-size:12px;}
+  .hero-eyebrow,.section-eyebrow,.cat-label,.fact-label,.contact-type,.footer-avail{font-size:11px;}
+  h1{font-size:42px;line-height:1.12;}
+  .hero-sub{font-size:15px;}
+  .btn-main,.btn-ghost{font-size:14px;}
+  .hero-actions{flex-direction:column;align-items:flex-start;}
+  .mockup-title{font-size:11px;}
+  .mockup-top{padding:8px 10px;}
+  .mockup-url{font-size:10px;}
+  .mockup-frame{height:260px;}
+  .refined-card{grid-template-columns:1fr;gap:8px;}
+  .refined-key{font-size:10px;}
+  .refined-val{font-size:16px;}
+  h2{font-size:34px;}
+  .project-name{font-size:22px;}
+  .project-location,.project-desc,.project-status{font-size:12px;}
+  .section-hint{font-size:11px;margin:-20px 0 24px;}
+  .about-text p,.contact-inner p{font-size:15px;}
+  .fact-val{font-size:20px;}
+  .contact-val{font-size:18px;}
+  footer{flex-direction:column;align-items:flex-start;gap:10px;}
+}
+</style>
+
+<nav id="top">
+  <div class="logo">Arafat Khan<span class="logo-dot">.</span></div>
+  <ul>
+    <li><a href="#selected-work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-main">
+    <div class="hero-eyebrow"><span class="eyebrow-line"></span>Web developer — Pakistan</div>
+    <h1>Websites built<br>with <em>purpose.</em></h1>
+    <p class="hero-sub">I build clean, modern websites for institutes, businesses, and brands. Every project starts with a conversation — no templates, no guesswork.</p>
+    <div class="hero-actions">
+      <a class="btn-main" href="https://wa.me/923375392447" target="_blank" rel="noopener noreferrer">Let's talk about your project</a>
+      <a class="btn-ghost" href="#selected-work">See my work</a>
+    </div>
+  </div>
+
+  <div class="hero-side">
+    <div class="mockup-title">Mockup</div>
+    <div class="site-mockup" aria-label="German Learning Hub site preview">
+      <div class="mockup-top">
+        <div class="mockup-dots"><span></span><span></span><span></span></div>
+        <span class="mockup-url">www.germanlearninghub.com</span>
+      </div>
+      <iframe class="mockup-frame" src="https://www.germanlearninghub.com" title="German Learning Hub preview" loading="lazy"></iframe>
+      <a class="mockup-overlay" href="https://germanlearninghub.com/" target="_blank" rel="noopener noreferrer" aria-label="Open German Learning Hub website"></a>
+    </div>
+
+    <div class="refined-card">
+      <div class="refined-row">
+        <span class="refined-key">Projects delivered</span>
+        <span class="refined-val">4+</span>
+      </div>
+      <div class="refined-row">
+        <span class="refined-key">Based in</span>
+        <span class="refined-val">Islamabad</span>
+      </div>
+      <div class="refined-row">
+        <span class="refined-key">Typical reply time</span>
+        <span class="refined-val">Within 24h</span>
+      </div>
+      <div class="refined-row">
+        <span class="refined-key">Availability</span>
+        <span class="refined-val" style="color:var(--maroon-light);">Open for new projects</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="selected-work">
+  <div class="section-eyebrow"><span class="eyebrow-line"></span>Selected work</div>
+  <p class="section-hint">Click to view website</p>
+
+  <div class="portfolio-cats">
+    <div class="cat-label">Education &amp; language institutes</div>
+    <div class="projects-row">
+      <a class="project-card project-card-link" href="https://germanlearninghub.com/" target="_blank" rel="noopener noreferrer">
+        <div class="project-name">GLH</div>
+        <div class="project-location">G-10, Islamabad</div>
+        <div class="project-desc">German language academy — full institute website with course listings and contact system.</div>
+        <div class="project-status status-live">Live</div>
+      </a>
+      <a class="project-card project-card-link" href="https://e-hub-website-seven.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <div class="project-name">EHUB</div>
+        <div class="project-location">Peshawar</div>
+        <div class="project-desc">IELTS preparation institute — clean, structured site built for student inquiries and enrollment.</div>
+        <div class="project-status status-live">Live</div>
+      </a>
+      <a class="project-card project-card-link" href="https://ela-web-blond.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <div class="project-name">ELA</div>
+        <div class="project-location">Peshawar</div>
+        <div class="project-desc">German language academy — website showcasing courses, schedule, and registration details.</div>
+        <div class="project-status status-live">Live</div>
+      </a>
+    </div>
+
+    <div class="cat-label">Food &amp; hospitality</div>
+    <div class="projects-row">
+      <a class="project-card project-card-link" href="https://leos-cafe.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <div class="project-name">Leo's Cafe</div>
+        <div class="project-location">Pakistan</div>
+        <div class="project-desc">Restaurant website — menu, ambiance, and reservation flow. Currently in development.</div>
+        <div class="project-status status-soon">In progress</div>
+      </a>
+      <div class="project-card" style="background:transparent;border:none;cursor:default;"></div>
+      <div class="project-card" style="background:transparent;border:none;cursor:default;"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about">
+  <div class="section-eyebrow"><span class="eyebrow-line"></span>About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a second-year Data Science student who builds websites for real clients — institutes, businesses, and anyone who needs a clean, functional presence online.</p>
+      <p>My work has been for language academies and educational institutes across Islamabad and Peshawar. Every site I build is custom — no page builders, no shortcuts.</p>
+      <p>If you have a project in mind, let's talk. I'll understand what you need, and we'll go from there.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact-row">
+        <span class="fact-label">Based in</span>
+        <span class="fact-val">Islamabad, Pakistan</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Studying</span>
+        <span class="fact-val">Data Science, 2nd year</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Projects delivered</span>
+        <span class="fact-val">4+</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Availability</span>
+        <span class="fact-val" style="color:var(--maroon-light);">Open to work</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+  <div class="section-eyebrow"><span class="eyebrow-line"></span>Get in touch</div>
+  <div class="contact-inner">
+    <p>Every project starts with a conversation. Tell me what you're building — we'll figure out the rest together. No pressure, no upfront commitments.</p>
+    <div class="contact-links">
+      <div class="contact-row">
+        <span class="contact-type">WhatsApp</span>
+        <a class="contact-val" href="https://wa.me/923375392447" target="_blank" rel="noopener noreferrer">+92 337 5392447</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-type">Email</span>
+        <a class="contact-val" href="mailto:2021730arafatkhan@gmail.com" target="_blank" rel="noopener noreferrer">2021730arafatkhan@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-type">GitHub</span>
+        <a class="contact-val" href="https://github.com/Arafat-Khann" target="_blank" rel="noopener noreferrer">github.com/Arafat-Khann</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-type">LinkedIn</span>
+        <a class="contact-val" href="https://www.linkedin.com/in/arafat-khan2007/" target="_blank" rel="noopener noreferrer">linkedin.com/in/arafat-khan2007</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><a class="footer-home" href="#top">Arafat Khan</a> — Web Developer</p>
+  <span class="footer-avail">Available for new projects</span>
+</footer>
